@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,39 +6,7 @@
     <title>Form0</title>
     <link rel="stylesheet" href="style/style.css">
     
-    <script type="text/javascript">
-        
-        function valid(form)
-        {
-            var fail = false
-            var name = form.name.value;
-            var email= form.email.value;
-            var password = form.password.value;
-            var confirm_password= form.confirm_password.value;
-            var check = document.getElementById("check").checked;
-            var mail_pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-            
-            if(name=="")
-                fail="Enter you name";
-            else if(mail_pattern.test(email)==false)
-                    fail="Incorrect email";
-            else if(password=="")
-                fail="Enter password";
-            else if(confirm_password!=password)
-                fail="Incorrect confirm password";
-            else if(!check)
-                fail="Need confirm the rules";
-            if(fail)
-                alert(fail);
-            else
-                window.location="http://google.com";
-            
-                
     
-        }
-    
-    
-    </script>
     
     
 </head>
@@ -51,15 +19,43 @@
             <div class="form-input"><input id="email" class="input" type="email" name="email" placeholder="E-mail"></div>
             <div class="form-input"><input id="password" class="input" type="password" name="password" placeholder="Password"></div>
             <div class="form-input"><input id="confirm_password" class="input" type="password" name="confirm_password" placeholder="Confirm Password"></div>
-            
-            <div class="form-input"><input id="check" type="checkbox" name="rules" ><label for="rules" >I accept <a href="#">rules</a> </label> </div>
-            
-            <button onclick="valid(document.getElementById('form'))" type="button"  class="btn"  >Done</button>
-            
-            
+
+            <div class="form-input"><input id="check" type="checkbox" name="rules"><label for="rules">I accept <a href="#">rules</a> </label> </div>
+
+            <button onclick="valid(document.getElementById('form'))" type="button" class="btn">Done</button>
+
+
         </form>
     </div>
-    
+
+    <script type="text/javascript">
+
+        function valid(form) {
+            var fail = false
+            var name = form.name.value;
+            var email = form.email.value;
+            var password = form.password.value;
+            var confirm_password = form.confirm_password.value;
+            var check = document.getElementById("check").checked;
+            var mail_pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (name == "")
+                fail = "Enter you name";
+            else if (mail_pattern.test(email) == false)
+                fail = "Incorrect email";
+            else if (password == "")
+                fail = "Enter password";
+            else if (confirm_password != password)
+                fail = "Incorrect confirm password";
+            else if (!check)
+                fail = "Need confirm the rules";
+            if (fail)
+                alert(fail);
+            else
+                window.location = "http://google.com";
+        }
+    </script>
+
 </body>
 
 </html>
